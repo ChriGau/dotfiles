@@ -13,6 +13,8 @@ plugins=(gitfast brew rbenv last-working-dir common-aliases sublime zsh-syntax-h
 # Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
 
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
 # Actually load Oh-My-Zsh
 source "${ZSH}/oh-my-zsh.sh"
 
@@ -27,4 +29,9 @@ export PATH="./bin:${PATH}:/usr/local/sbin"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1"
+export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+
+eval "$(rbenv init -)"
+
+
 export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
